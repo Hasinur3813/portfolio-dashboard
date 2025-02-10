@@ -15,7 +15,7 @@ const Login = () => {
     <div className="min-h-screen bg-hero relative">
       <div className="w-full min-h-screen bg-black/70 flex justify-center items-center">
         {/* login form */}
-        <div className="bg-slate-800/90 px-6 py-16 w-sm rounded-md shadow-lg">
+        <div className="bg-slate-800/95 px-6 py-16 w-sm rounded-md shadow-lg">
           <h1 className="text-center font-bold text-3xl mb-4 text-blue-500">
             Admin Login{" "}
           </h1>
