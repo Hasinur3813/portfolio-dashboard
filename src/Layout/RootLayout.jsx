@@ -1,10 +1,13 @@
+import { Outlet } from "react-router-dom";
+
 const RootLayout = () => {
   return (
     <div>
       {/* sidebar */}
-      <div></div>
+      <div>sidebar</div>
 
       {/* outlet */}
+      <Outlet />
     </div>
   );
 };
