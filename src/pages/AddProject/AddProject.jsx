@@ -22,53 +22,63 @@ const AddProject = () => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-6 bg-white shadow-lg rounded-lg">
+    <div className="max-w-5xl mx-auto p-4 bg-white shadow-lg rounded-lg">
       <h2 className="text-2xl font-bold mb-6">Add New Project</h2>
-      <Form layout="vertical" onFinish={onFinish}>
-        <Form.Item
-          label="Project Name"
-          name="name"
-          rules={[{ required: true }]}
-        >
-          <Input placeholder="Enter project name" />
-        </Form.Item>
+      <Form
+        layout="vertical"
+        onFinish={onFinish}
+        className="flex flex-col md:flex-row gap-6"
+      >
+        <div className="md:w-1/3">
+          <Form.Item
+            label="Project Name"
+            name="name"
+            rules={[{ required: true }]}
+          >
+            <Input size="large" placeholder="Enter project name" />
+          </Form.Item>
 
-        <Form.Item label="Main Technologies" name="mainTechnologies">
-          <Input placeholder="e.g. React.js, Tailwind CSS, Node.js" />
-        </Form.Item>
+          <Form.Item label="Main Technologies" name="mainTechnologies">
+            <Input
+              size="large"
+              placeholder="e.g. React.js, Tailwind CSS, Node.js"
+            />
+          </Form.Item>
 
-        <Form.Item label="GitHub Client Repo" name={["github", "client"]}>
-          <Input placeholder="GitHub repo link" />
-        </Form.Item>
+          <Form.Item label="GitHub Client Repo" name={["github", "client"]}>
+            <Input size="large" placeholder="GitHub repo link" />
+          </Form.Item>
 
-        <Form.Item label="GitHub Server Repo" name={["github", "server"]}>
-          <Input placeholder="Optional" />
-        </Form.Item>
+          <Form.Item label="GitHub Server Repo" name={["github", "server"]}>
+            <Input size="large" placeholder="Optional" />
+          </Form.Item>
 
-        <Form.Item label="Live Link" name="liveLink">
-          <Input placeholder="Live website URL" />
-        </Form.Item>
+          <Form.Item label="Live Link" name="liveLink">
+            <Input size="large" placeholder="Live website URL" />
+          </Form.Item>
+          <Form.Item>
+            <Button size="large" type="primary" htmlType="submit">
+              Submit Project
+            </Button>
+          </Form.Item>
+        </div>
 
-        <Form.Item label="Project Description">
-          <LexicalComposer initialConfig={editorConfig}>
-            <div className="border p-2 rounded">
-              <Toolbar />
-              <RichTextPlugin
-                contentEditable={
-                  <ContentEditable className="border p-2 w-full min-h-[100px]" />
-                }
-              />
-              <HistoryPlugin />
-              <AutoFocusPlugin />
-            </div>
-          </LexicalComposer>
-        </Form.Item>
-
-        <Form.Item>
-          <Button type="primary" htmlType="submit">
-            Submit Project
-          </Button>
-        </Form.Item>
+        <div className="flex-1">
+          <Form.Item label="Project Description">
+            <LexicalComposer initialConfig={editorConfig}>
+              <div className=" p-2 rounded">
+                <Toolbar />
+                <RichTextPlugin
+                  contentEditable={
+                    <ContentEditable className="border rounded-md border-gray-400 p-2 w-full min-h-[400px]" />
+                  }
+                />
+                <HistoryPlugin />
+                <AutoFocusPlugin />
+              </div>
+            </LexicalComposer>
+          </Form.Item>
+        </div>
       </Form>
     </div>
   );

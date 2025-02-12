@@ -11,13 +11,13 @@ const RootLayout = () => {
   };
 
   return (
-    <div className="w-full min-h-screen bg-gray-800 flex overflow-x-hidden">
+    <div className="w-full min-h-screen bg-gray-800 flex overflow-x-hidden ">
       {/* Sidebar */}
       <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
 
       {/* Main Content */}
       <div
-        className={`flex-1 p-4 transition-all duration-300 overflow-y-auto ${
+        className={`flex-1 p-3 mt-8 transition-all duration-300 overflow-y-auto ${
           isSidebarOpen ? "md:ml-64" : "md:ml-0"
         }`}
       >
